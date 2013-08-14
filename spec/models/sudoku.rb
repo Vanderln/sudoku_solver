@@ -14,6 +14,15 @@ describe "Sudoku" do
 		it "exists" do
 			expect(@sudoku.solve!(@string))
 		end
+
+		it "generates the possible numbers" do
+			@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
+			expect(@sudoku.solve!(@string)).to eq(("1".."9").to_a)
+		end
+
+		it "finds the first empty cell" do
+
+		end
 	end
 end
 
