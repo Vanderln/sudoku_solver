@@ -43,3 +43,23 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+group :development do
+  gem 'binding_of_caller'
+  gem 'better_errors'
+end
+
+group :development, :test do
+  gem 'rspec-rails'
+  gem 'meta_request'
+  gem 'guard-rspec'
+end
+
+group :test do
+  gem 'database_cleaner'
+  gem 'factory_girl_rails'
+  gem 'shoulda-matchers'
+  gem 'shoulda-context'
+  gem 'capybara'
+  gem 'selenium-webdriver'
+end
