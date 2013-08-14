@@ -1,4 +1,4 @@
-Sudoku Solver
+WIP Sudoku Solver
 
 This is my first test driven solo app.
 
