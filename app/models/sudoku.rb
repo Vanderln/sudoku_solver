@@ -1,7 +1,7 @@
 class Sudoku
-	attr_reader :string
-	def initialize(string)
-		@string = string
+	attr_reader :board
+	def initialize(board_string)
+		@board = board_string.split
 	end
 
 	def solve!
@@ -14,9 +14,13 @@ class Sudoku
 	end
 
 	def find_first_empty
-		@string.index("0")
+		@board.index("0")
+	end
+
+	def solved?
+		@board.include?("0")
 	end
 end
 
-s = Sudoku.new("105802000090076405200400819019007306762083090000061050007600030430020501600308900")
-p s.solve!
+# s = Sudoku.new("105802000090076405200400819019007306762083090000061050007600030430020501600308900")
+# p s.solve!
