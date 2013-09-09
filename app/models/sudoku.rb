@@ -1,7 +1,7 @@
 class Sudoku
 	attr_reader :board
 	def initialize(board_string)
-		@board = board_string.split
+		@board = board_string.split('')
 	end
 
 	def solve!
@@ -18,7 +18,7 @@ class Sudoku
 	end
 
 	def solved?
-		@board.include?("0")
+		!@board.include?("0")
 	end
 end
 
