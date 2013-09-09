@@ -5,8 +5,7 @@ class Sudoku
 	end
 
 	def solve!
-		possibilities
-		find_first_empty
+		return @board if solved?
 	end
 
 	def possibilities

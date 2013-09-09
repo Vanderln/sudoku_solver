@@ -10,22 +10,24 @@ describe "Sudoku" do
 	end
 
 	context "solve! method" do
+		it "returns a board string if solved" do
+			@string = "539126784482579316617438295791253648854617932326894571968745123275381469143962857"
+		  @sudoku = Sudoku.new(@string)
+		  @sudoku.solve!
+		end
+	end
 
-		it "generates the possible numbers" do
+	it "generates the possible numbers" do
 			expect(@sudoku.possibilities).to eq(("1".."9").to_a)
 		end
 
-		it "finds the first empty cell" do
-			@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
-			pending
-		end
-	end
-
-	it "returns a board string if solved" do
-
+	it "finds the first empty cell" do
+		@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
+		pending
 	end
 
 	context "solve? method" do
+
 		it "returns false with an incomplete string" do
 			@string = "105802000090076405200400819019007306762083099934561658237689535431123531644368954"
 			@sudoku = Sudoku.new(@string)
