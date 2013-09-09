@@ -17,13 +17,18 @@ describe "Sudoku" do
 		end
 	end
 
-	it "generates the possible numbers" do
-			expect(@sudoku.possibilities).to eq(("1".."9").to_a)
+	context	"possibilities method" do
+		it "generates the possible numbers" do
+				expect(@sudoku.possibilities).to eq(("1".."9").to_a)
 		end
+	end
 
-	it "finds the first empty cell" do
-		@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
-		pending
+	context "first empty cell method" do
+		it "finds the first empty cell" do
+			@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
+			@sudoku = Sudoku.new(@string)
+			expect(@sudoku.find_first_empty).to eq(1)
+		end
 	end
 
 	context "solve? method" do
