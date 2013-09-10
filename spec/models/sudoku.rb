@@ -15,6 +15,21 @@ describe "Sudoku" do
 		  @sudoku = Sudoku.new(@string)
 		  @sudoku.solve!
 		end
+
+		context "first empty cell method" do
+		it "finds the first empty cell" do
+			@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
+			@sudoku = Sudoku.new(@string)
+			expect(@sudoku.find_first_empty).to eq(1)
+		end
+	end
+
+		it "checks the row contents" do
+			@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
+			@sudoku = Sudoku.new(@string)
+			cell_index = @sudoku.find_first_empty
+			expect(@sudoku.check_row_contents(cell_index)).to eq(["1","0","5","8","0","2","0","0","0"])
+		end
 	end
 
 	context	"possibilities method" do
@@ -23,13 +38,6 @@ describe "Sudoku" do
 		end
 	end
 
-	context "first empty cell method" do
-		it "finds the first empty cell" do
-			@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
-			@sudoku = Sudoku.new(@string)
-			expect(@sudoku.find_first_empty).to eq(1)
-		end
-	end
 
 	context "solve? method" do
 

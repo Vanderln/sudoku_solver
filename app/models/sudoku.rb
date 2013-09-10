@@ -6,6 +6,7 @@ class Sudoku
 
 	def solve!
 		return @board if solved?
+		cell_index = find_first_empty
 	end
 
 	def possibilities
@@ -18,6 +19,11 @@ class Sudoku
 
 	def solved?
 		!@board.include?("0")
+	end
+
+	def check_row_contents(cell_index)
+		row_index = cell_index / 9
+		@board.each_slice(9).to_a[row_index]
 	end
 end
 
