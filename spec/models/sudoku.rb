@@ -30,6 +30,13 @@ describe "Sudoku" do
 			cell_index = @sudoku.find_first_empty
 			expect(@sudoku.check_row_contents(cell_index)).to eq(["1","0","5","8","0","2","0","0","0"])
 		end
+
+		it "checks the column contents" do
+			@string = "105802000090076405200400819019007306762083090000061050007600030430020501600308900"
+			@sudoku = Sudoku.new(@string)
+			cell_index = @sudoku.find_first_empty
+			expect(@sudoku.check_column_contents(cell_index)).to eq(["0","9","0","1","6","0","0","3","0"])
+		end
 	end
 
 	context	"possibilities method" do

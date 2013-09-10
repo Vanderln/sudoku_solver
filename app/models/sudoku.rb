@@ -25,6 +25,11 @@ class Sudoku
 		row_index = cell_index / 9
 		@board.each_slice(9).to_a[row_index]
 	end
+
+	def check_column_contents(cell_index)
+		column_index = cell_index
+		@board.each_slice(9).map{|row| row[column_index]}
+	end
 end
 
 # s = Sudoku.new("105802000090076405200400819019007306762083090000061050007600030430020501600308900")
